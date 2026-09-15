@@ -1,0 +1,46 @@
+plugins { id 'com.android.application' }
+
+// Release credentials are supplied only by the invoking environment. Private
+// signing material and passwords never belong in this repository.
+def releaseKeystorePath = System.getenv('KEYSTORE_PATH')
+def releaseKeyAlias = System.getenv('KEY_ALIAS')
+def releaseStorePassword = System.getenv('STORE_PASSWORD')
+def releaseKeyPassword = System.getenv('KEY_PASSWORD')
+def hasReleaseSigning = [releaseKeystorePath, releaseKeyAlias, releaseStorePassword, releaseKeyPassword]
+        .every { it != null && !it.isEmpty() }
+
+android {
+    namespace 'org.jpi59.ethicupdatesafe'
+    compileSdk 36
+
+    defaultConfig {
+        applicationId 'org.jpi59.ethicupdatesafe'
+        minSdk 24
+        targetSdk 36
+        versionCode 1
+        versionName '0.1.0'
+    }
+
+    if (hasReleaseSigning) {
+        signingConfigs {
+            release {
+                storeFile file(releaseKeystorePath)
+                storePassword releaseStorePassword
+                keyAlias releaseKeyAlias
+                keyPassword releaseKeyPassword
+            }
+        }
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled true
+            shrinkResources true
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            if (hasReleaseSigning) {
+                signingConfig signingConfigs.release
+            }
+        }
+    }
+    dependenciesInfo { includeInApk = false; includeInBundle = false }
+}

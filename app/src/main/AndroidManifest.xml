@@ -1,0 +1,21 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Needed only to compare a selected APK with its matching installed package. No app list is shown or transmitted. -->
+    <uses-permission android:name="android.permission.QUERY_ALL_PACKAGES" />
+    <!-- Used only after a per-query confirmation to read public F-Droid records. -->
+    <uses-permission android:name="android.permission.INTERNET" />
+    <!-- Lets the user hand one reviewed APK to Android's own installer; it never grants silent installs. -->
+    <uses-permission android:name="android.permission.REQUEST_INSTALL_PACKAGES" />
+    <application
+        android:allowBackup="false"
+        android:icon="@drawable/ic_update_safe"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme"
+        android:usesCleartextTraffic="false">
+        <activity android:name=".MainActivity" android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+</manifest>

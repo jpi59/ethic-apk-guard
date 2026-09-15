@@ -1,0 +1,11 @@
+<resources>
+    <color name="ink">#17221E</color>
+    <color name="surface">#F7F8F4</color>
+    <color name="surface_dark">#111A16</color>
+    <color name="primary">#176B5A</color>
+    <color name="primary_light">#86D8C2</color>
+    <color name="muted">#56625C</color>
+    <color name="safe">#176B5A</color>
+    <color name="caution">#9A5B08</color>
+    <color name="risk">#B42318</color>
+</resources>
