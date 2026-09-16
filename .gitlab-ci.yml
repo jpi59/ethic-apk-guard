@@ -15,4 +15,4 @@ cache:
 android-verify:
   stage: verify
   script:
-    - ./gradlew :app:assembleDebug :app:assembleRelease
+    - ./gradlew --no-daemon :app:testDebugUnitTest :app:assembleRelease :app:lintVitalRelease
