@@ -1,0 +1,7 @@
+Ethic APK Guard reviews one selected Android APK before it is handed to an installer.
+
+It compares the package name, version code, signing certificates, declared signing history, Android version requirements, native libraries, DEX presence, newly requested dangerous permissions, and selected manifest changes with the matching installed app.
+
+The review happens locally. The app does not install or uninstall anything itself, does not retain the selected APK, and does not transmit an app inventory. After an explicit confirmation, it can hand one reviewed APK to Android's system installer, which remains responsible for the final installation decision.
+
+APKS and XAPK containers are identified and declined because installing split-package bundles is outside this single-APK workflow. An optional, separately confirmed lookup can request public F-Droid records using only the package identifier and version code. Registry information is not a malware verdict or authenticity guarantee.

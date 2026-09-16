@@ -1,0 +1,1 @@
+Initial local-first release for reviewing a selected APK before installation.
