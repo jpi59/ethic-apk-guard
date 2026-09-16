@@ -1,0 +1,1 @@
+Reproducible release build configuration for F-Droid verification.
