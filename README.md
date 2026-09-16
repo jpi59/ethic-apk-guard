@@ -16,7 +16,7 @@ The verdict is deliberately conservative: Android remains the final authority fo
 
 `INTERNET` is declared solely for the per-query, consented F-Droid lookup described above; the complete update-compatibility analysis works without a network connection.
 
-This project is released under GNU GPLv3 or any later version. See [COPYING](COPYING). It is not yet claiming F-Droid readiness; publication still requires the normal metadata, reproducibility, and review work.
+This project is released under GNU GPLv3 or any later version. See [COPYING](COPYING). An F-Droid recipe has been submitted for review; this does not imply acceptance or publication. F-Droid must still complete its metadata, reproducibility, and review work.
 
 Release signing is local and opt-in. Provide `KEYSTORE_PATH`, `KEY_ALIAS`, `STORE_PASSWORD`, and `KEY_PASSWORD` to Gradle; no private key or password is committed. The public source repository is the reproducible handoff, while a distributed APK must be accompanied by its checksum and signing-certificate information.
 
