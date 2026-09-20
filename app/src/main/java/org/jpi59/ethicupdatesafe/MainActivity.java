@@ -65,8 +65,25 @@ public final class MainActivity extends Activity {
         root.setPadding(side, dp(28), side, dp(28));
         scroll.addView(root);
 
+        LinearLayout topBar = new LinearLayout(this);
+        topBar.setOrientation(LinearLayout.HORIZONTAL);
+        topBar.setGravity(Gravity.CENTER_VERTICAL);
+        topBar.setPadding(0, 0, 0, dp(8));
+
+        android.widget.ImageButton btnMenu = new android.widget.ImageButton(this);
+        btnMenu.setImageResource(R.drawable.ic_settings_menu);
+        btnMenu.setBackground(null);
+        btnMenu.setColorFilter(PRIMARY);
+        btnMenu.setContentDescription(getString(R.string.menu_title));
+        btnMenu.setOnClickListener(v -> EthicEcosystemMenu.show(this, false));
+        topBar.addView(btnMenu, new LinearLayout.LayoutParams(dp(44), dp(44)));
+
         TextView eyebrow = text("ANALIZA ANTES DE INSTALAR", 12, PRIMARY); eyebrow.setLetterSpacing(.12f); bold(eyebrow);
-        root.addView(eyebrow);
+        LinearLayout.LayoutParams eyebrowParams = new LinearLayout.LayoutParams(0, -2, 1f);
+        eyebrowParams.setMarginStart(dp(8));
+        topBar.addView(eyebrow, eyebrowParams);
+        root.addView(topBar);
+
         TextView title = text("Ethic APK Guard", 29, INK); bold(title); title.setPadding(0, dp(7), 0, 0); root.addView(title);
         TextView subtitle = text("Comprueba una APK antes de instalarla.", 17, MUTED); subtitle.setPadding(0, dp(6), 0, dp(22)); root.addView(subtitle);
 
