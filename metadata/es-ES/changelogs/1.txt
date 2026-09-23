@@ -1,0 +1,1 @@
+Lanzamiento inicial con enfoque local para revisar un APK seleccionado antes de la instalación.

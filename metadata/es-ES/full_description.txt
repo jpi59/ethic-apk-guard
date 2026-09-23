@@ -1,0 +1,7 @@
+Ethic APK Guard revisa un APK de Android seleccionado antes de entregarlo a un instalador.
+
+Compara el nombre del paquete, el código de versión, los certificados de firma, el historial de firmas declarado, los requisitos de versión de Android, las bibliotecas nativas, la presencia de DEX, los nuevos permisos peligrosos solicitados y los cambios seleccionados en el manifiesto con la aplicación instalada correspondiente.
+
+La revisión se realiza de forma local. La aplicación no instala ni desinstala nada por sí misma, no conserva el APK seleccionado y no transmite un inventario de aplicaciones. Tras una confirmación explícita, puede entregar un APK revisado al instalador del sistema de Android, que sigue siendo el responsable de la decisión final de instalación.
+
+Los contenedores APKS y XAPK se identifican y rechazan porque la instalación de paquetes divididos está fuera de este flujo de trabajo de un solo APK. Una consulta opcional, confirmada por separado, puede solicitar registros públicos de F-Droid utilizando únicamente el identificador del paquete y el código de versión. La información del registro no constituye un veredicto de malware ni una garantía de autenticidad.
